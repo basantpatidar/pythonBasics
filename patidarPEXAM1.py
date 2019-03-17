@@ -45,5 +45,32 @@ while i < len(fruitSales):
     print(" ---> TOTAL : ",total)
     total = 0
 
+# Task 5 nested for and while loop
+for i in range(1, len(fruitSales)-1):
+    total = 0
+    temp = ''
+    j = 0
+    while j <= len(fruitSales[0]):
+        if j == 0:
+            temp = fruitSales[j][i]
+            j += 1
+            continue
+        total += fruitSales[j][i]
+        j += 1
+    print('TOTAL', temp, 'for the week is:', total, 'lbs')
+
+# Task 6  creating table of content using loops
+fruits = ["Apples", "Plums", "Nectarines", "Oranges"]
+print("__________MONDAY FRUITS SALES_________")
+for key, value in SoldFruit.items():
+    if key == "Monday":
+        total = 0
+        for i in range (0,4):
+            total += value[i]
+        for i in range (0,4):
+            ratio = round(((value [i] / total) * 100),2)
+            print("{:<12} {:<5} {:<7}".format(fruits[i]+':', value[i], ratio))
+print("______________________________________")
+
 
 
