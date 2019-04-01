@@ -11,3 +11,14 @@ def createNumberListFromFile(FP):
     return data
 
 print(createNumberListFromFile("data.txt"))
+
+#Finding largest number from file
+def maxList(FP):
+    data = createNumberListFromFile(FP)
+    l = 0
+    for i in data:
+        if i > l:
+            l = i
+    return l
+
+print(maxList("data.txt"))
