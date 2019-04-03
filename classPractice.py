@@ -1,3 +1,6 @@
+# A class with name "Stock" and finding Minimum, Maximum, Average, Variance, Range and Sigma
+# for Stocks of Intel and AMD corporation given data.
+
 class Stock:
     StockCount = 0
 
@@ -68,6 +71,8 @@ class Stock:
             totalX += x
         # print("X :" ,x," TotalX : ", totalX)
         return totalX/(c)
+
+    #Calculating Sigma
     def Sigma(self):
     # calculating Mean
         data = self.__prices
@@ -85,6 +90,8 @@ class Stock:
             totalX += x
         # print("X :" ,x," TotalX : ", totalX)
         return (totalX/(c-1)) ** 0.5
+
+    # Calculating Range by subtracting lower value from higher
     def Range(self):
         data = self.__prices
         l = 0
@@ -101,6 +108,7 @@ class Stock:
                     k = j
         diff = l-k
         return diff
+    # Finding higher value
     def High(self):
         data = self.__prices
         l = 0
@@ -108,6 +116,7 @@ class Stock:
             if i > l:
                 l = i
         return l
+    # Finding lower value
     def Low(self):
         data = self.__prices
         min = data[0]
@@ -118,6 +127,7 @@ class Stock:
 
         return min
     @staticmethod
+    # Creating a function which will call all the above function using S1 object instance
     def DisplayStockInfo():
         S1.displayPrices()
         print(S1.Sum())
@@ -128,6 +138,7 @@ class Stock:
         print(S1.High())
         print(S1.Low())
 
+    # creating static method which will compare both the companies share values and return the highest
     @staticmethod
     def CompareStockPerformance(S1,S2):
         intel = S1.Range()
@@ -139,6 +150,7 @@ class Stock:
         else:
             print("Both are equal")
 
+# P is share data for Intel while Q is share data for AMD
 P = [43.05, 43.10, 44.05,44.25, 44.50, 46.25]
 Q = [41.15, 41.10, 43.95,40.15, 40.50, 40.25]
 S1 = Stock('Intel Corporation', 'INTL', P, P[0],P[-1])
