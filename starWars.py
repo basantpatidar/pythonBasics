@@ -26,18 +26,19 @@ class TieFighterPilot:
 
 
     def FliesTieFighter(self, v):
-        pass
+        print('I am flying Tie Fighter ' + v)
 
 
 
 
 
 class TieFighter:
-    def __init__(self,IDNumber, pilot, cannon, shield):
+    def __init__(self,IDNumber, pilot, cannons, shield):
         self.__IDNumber = IDNumber
         self.__pilot = pilot
-        self.__cannon = cannon
+        self.__cannons = cannons
         self.__shield = shield
+        self.__AmmoCount = 100
 
 
     def getIDNumber(self):
@@ -55,18 +56,24 @@ class TieFighter:
         return self.__cannon
     def setcannon(self,v):
         self.__cannon = v
+
     def getshield(self):
         return self.__shield
+    def setshield(self, v):
+        self.__shield = v
 
-    def setshield(self):
-        self.__shield
+    def getAmmoCount(self):
+        return self.__AmmoCount
+    def setAmmoCount(self, v):
+        self.__AmmoCount = v
 
     def maneuver(self, v):
-        print("I am firing my cannons")
-        self.setAmmoCount(self.getAmmoCount()-2)
-        print(self.AmmoCount)
-    def firesCannons(self, v):
         pass
+    def firesCannons(self):
+        print('I am firing my cannons')
+        self.setAmmoCount(self.getAmmoCount()- 2)
+        print(self.__AmmoCount)
+
     def displayPilotInfo(self):
         self.__Pilot.displayInfo()
 
@@ -78,17 +85,16 @@ class TieFighter:
 
 
 TFP1 = TieFighterPilot("TP001",4, "LT")
-TFP1 = TieFighterPilot("TP002",4, "CAPT")
-TFP1 = TieFighterPilot("TP003",4, "LT")
-TFP1 = TieFighterPilot("TP004",4, "CON")
+TFP2 = TieFighterPilot("TP002",4, "CAPT")
+TFP3 = TieFighterPilot("TP003",4, "LT")
+TFP4 = TieFighterPilot("TP004",4, "CON")
 
 
 TF1 = TieFighter("TF1", TFP1, 4, True)
-TF2 = TieFighter("TF2", TFP1, 4, True)
-TF3 = TieFighter("TF3", TFP1, 4, True)
-TF4 = TieFighter("TF4", TFP1, 4, True)
+TF2 = TieFighter("TF2", TFP2, 4, True)
+TF3 = TieFighter("TF3", TFP3, 4, True)
+TF4 = TieFighter("TF4", TFP4, 4, True)
 L = [TF1, TF2, TF3, TF4]
-TFP1.displayInfo()
 TieFighter.displayPilots(L)
 
 # calling Stating method
