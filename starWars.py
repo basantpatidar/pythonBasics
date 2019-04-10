@@ -75,7 +75,7 @@ class TieFighter:
         print(self.__AmmoCount)
 
     def displayPilotInfo(self):
-        self.__Pilot.displayInfo()
+        self.__pilot.displayInfo()
 
     @staticmethod
     def displayPilots(L):
