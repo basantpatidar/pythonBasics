@@ -10,7 +10,7 @@ def createNumberListFromFile(FP):
             data.append(a)
     return data
 
-print(createNumberListFromFile("data.txt"))
+# print(createNumberListFromFile("data.txt"))
 
 #Finding largest number from file
 def maxList(FP):
@@ -21,4 +21,12 @@ def maxList(FP):
             l = i
     return l
 
-print(maxList("data.txt"))
+# print(maxList("data.txt"))
+
+
+def writeFile(name):
+    with open("name.txt",'w') as f:
+        f.write(str(name)+ ' ')
+        print(name)
+
+writeFile("Basant")
