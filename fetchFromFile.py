@@ -49,3 +49,23 @@ def frequencyList(FP,L):
 
 num = 43
 frequencyList("freqList.txt",num)
+
+def relativefreqList(FP,L):
+    data = []
+    c = 0
+    with open("data.txt","r") as f:
+        for i in f:
+            n = i.split()
+        for j in n:
+            a = float(j)
+            data.append(a)
+    for x in data:
+        if x == L:
+            c += 1
+    c = c/len(data)
+    print(c)
+    with open(FP,'w') as f:
+        f.write(str(c)+ ' ')
+
+num = 43
+relativefreqList("tast1B.txt",num)
