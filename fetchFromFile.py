@@ -68,4 +68,27 @@ def relativefreqList(FP,L):
         f.write(str(c)+ ' ')
 
 num = 43
-relativefreqList("tast1B.txt",num)
+relativefreqList("Data1B.txt",num)
+
+# Cumulatice relative frequency
+def cumRelativefreqList(txt,L):
+    data = []
+    c = 0
+    with open("FP.txt","r") as f:
+        for i in f:
+            n = i.split()
+        for j in n:
+            a = int(j)
+            data.append(a)
+    index = len(data)-1
+    print(index)
+    for x in data:
+        if (x <= L & L <= index):
+            c += 1
+    c = (c)/len(data)
+    print(c)
+    with open(txt,'w') as f:
+        f.write(str(c)+ ' ')
+
+num = 7
+cumRelativefreqList("Data1C.txt",num)
