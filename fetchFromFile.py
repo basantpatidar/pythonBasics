@@ -228,3 +228,44 @@ def removeOutliers(FP,task):
 
 
 removeOutliers("FP.txt","Data2B.txt")
+
+#  Finding DistributionShape
+def distributionShape(FP):
+    data = []
+    c = 0
+    with open(FP,"r") as f:
+        for i in f:
+            n = i.split()
+        for j in n:
+            a = int(j)
+            data.append(a)
+    # Sorting to find median
+    n = len(data)
+    for i in range(n):
+        for j in range(1,n):
+            if data[j-1] > data[j]:
+                (data[j-1], data[j]) = (data[j], data[j-1])
+    # finding mean
+    mean = 0
+    c = 0
+    dataLength = len(data)
+    for i in data:
+        mean += i
+    mean =  mean/dataLength
+
+    # Finding Median
+
+    if (dataLength%2 == 0):
+        median = (data[((dataLength)//2)]+data[((dataLength)//2)-1])//2
+    else:
+        median = data[(dataLength+1)//2]
+    print("mean : ",mean," Median : ",median)
+    if mean > median:
+        return "Right Skewed"
+    elif mean < median:
+        return "Left Skewed"
+    else:
+        return "Symmetrical"
+
+
+print(distributionShape("FP.txt"))
