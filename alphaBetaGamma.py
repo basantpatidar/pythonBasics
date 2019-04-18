@@ -68,7 +68,29 @@ class VirusDetector:
         print("Code Buffer Size "+ str(self.__codeBuffer))
         print("_____________________________________________________________")
 
-
+    def displayAlphaVirus(self,v):
+        v = str(v)
+        length = len(v)
+        if (length == 16):
+            if(v[0] == '1' or v[6] == '1' or v[9] == '1'):
+                print("ALPHA VIRUS DETECTED")
+                return True
+            else:
+                print("ALPHA VIRUS NOT DETECTED")
+            return False
+        else:
+            print("ALPHA VIRUS NOT DETECTED")
+            return False
+    def detectBetaVirus(self,v):
+        v = str(v)
+        length = len(v)
+        if(length == 8 or length == 16):
+            if(v[0] == '1' and v[1] == '1' and v[2] == '1' and v[3] == '1' and v[14] == '0' and v[15] == '0'):
+                print("BETA VIRUS DETECTED")
+                return True
+        else:
+            print("Beta Virus Not Detected")
+            return False
 
 
 cb = VirusDetector("12-1000-34","Lock-1","paceIS-612","5")
@@ -77,5 +99,6 @@ cb.countFalseBits("0000")
 cb.countBytes("000")
 print(cb.checkBit("0010"))
 cb.displayWidgetInfo()
-
+cb.displayAlphaVirus(1111111111111111)
+cb.detectBetaVirus(1111000000000000)
 
