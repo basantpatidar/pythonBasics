@@ -106,11 +106,13 @@ class TurboProp:
     def setisAirborne(self, v):
         self.__isAirborne = v
 
+    # Getting Variant, Model Number and Aircraft tail Number
     def displayACInfo(self):
         print("Variant: ",self.__variant)
         print("Model Number: ", self.__modelNumber)
         print("Aircraft Tail Number: ",self.__aircraftTailNumber)
 
+    # Getting Current speed, current altitude and True if plane is in Air
     def displayACStatus(self):
         print("______________Aircraft Status For: " + str(self.__aircraftTailNumber)+ "________________")
         print("Speed: ", self.__currentSpeed)
@@ -118,11 +120,13 @@ class TurboProp:
         print("In Flight", self.__isAirborne)
         print()
 
+    # i is the objects in the passengers list
     def displayPassengerInfo(self):
         for i in passengers:
             i.displayPassengerInfo()
         print()
 
+    #getting takeoff status
     def TakeOff(self):
         if self.__isAirborne:
             print("Aircraft is already airborne")
