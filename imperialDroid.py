@@ -14,7 +14,7 @@ class ImperialDroid:
     def runDiagnostic(self):
         ID.displayInfo()
 
-
+# Inheriting ImperialDroid
 class SentryDroid_A(ImperialDroid):
     def __init__(self, DroidID, DroidType, Head, UpperTorso, Arms, Legs):
         super() .__init__(DroidID, "Alpha", Head, UpperTorso, Arms, Legs)
@@ -36,11 +36,14 @@ class Arm:
         print("Arms")
         print("ID Number: ", self.__IDNumber)
         print("Type Type: ", self.__AType)
+		
 
+#Inheriting Arm
 class LeftArm(Arm):
     def __init__(self, IDNumber):
         super().__init__(IDNumber,"LeftARM")
 
+#Inheriting Arm		
 class RightArm(Arm):
     def __init__(self, IDNumber):
         super().__init__(IDNumber,"RightARM")
@@ -56,10 +59,12 @@ class Leg:
         print("ID Number: ", self.__IDNumber)
         print("Type: ", self.__LType)
 
+#Inheriting Leg		
 class LeftLeg(Leg):
     def __init__(self, IDNumber):
         super().__init__(IDNumber,"Left Leg")
 
+#Inheriting Leg
 class RightLeg(Leg):
     def __init__(self, IDNumber):
         super().__init__(IDNumber,"Right Leg")
@@ -77,6 +82,7 @@ class Cranial(Appendage):
     def __init__(self, IDNumber):
         super().__init__(IDNumber,"Cranial")
 
+#Inheriting Appendage
 class Torso(Appendage):
     def __init__(self, IDNumber):
         super().__init__(IDNumber,"Torso")
